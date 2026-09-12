@@ -36,7 +36,7 @@ export function Sidebar({ locale }: { locale: Locale }) {
           {PROFILE.name}
         </h1>
         <p className="mt-2 text-lg text-fg">{t(locale, "site.role")}</p>
-        <p className="mt-4 max-w-sm text-fg-muted">{t(locale, "todo.tagline")}</p>
+        <p className="mt-4 max-w-sm text-fg-muted">{t(locale, "profile.tagline")}</p>
 
         <div className="mt-8 hidden lg:block">
           <SectionNav label={t(locale, "nav.sections")} sections={sections} />

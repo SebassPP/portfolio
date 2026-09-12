@@ -26,6 +26,11 @@ export type ExperienceEntry = {
   /** URL oficial de la empresa, o `null` mientras no esté confirmada. */
   url: string | null;
   tags: readonly string[];
+  /**
+   * Borrador armado con los hechos de docs/01-perfil-profesional.md y lo
+   * confirmado en conversación. Pendiente de pasar por la voz de Sebastián.
+   */
+  description: { en: string; es: string };
 };
 
 export const EXPERIENCE: readonly ExperienceEntry[] = [
@@ -37,6 +42,10 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     end: null,
     url: "https://www.botech.com.co/",
     tags: ["Java 17", "Spring Boot 3", "Docker Swarm", "AWS", "PostgreSQL"],
+    description: {
+      en: "I lead backend development and infrastructure: multi-tenant architecture, Docker Swarm on AWS, and CI/CD with GitHub Actions, plus coordinating a small, multidisciplinary team.",
+      es: "Lidero el desarrollo backend y la infraestructura: arquitectura multi-tenant, Docker Swarm en AWS y CI/CD con GitHub Actions, además de coordinar un equipo pequeño y multidisciplinar.",
+    },
   },
   {
     id: "paramo-programing",
@@ -46,6 +55,10 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     end: null,
     url: "https://paramoprograming.com/",
     tags: ["Next.js", "Docker Swarm", "Nginx", "CI/CD"],
+    description: {
+      en: "Co-owner of a small team of friends building custom software for clients across different sectors: e-commerce, academic CMS platforms, personal projects, among others.",
+      es: "Co-owner de un equipo de amigos construyendo software a la medida para clientes de distintos sectores: e-commerce, CMS académicos, proyectos personales, entre otros.",
+    },
   },
   {
     id: "domo-i",
@@ -55,6 +68,10 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     end: "2026-01",
     url: null,
     tags: ["Design Thinking", "SIT", "User Research"],
+    description: {
+      en: "I applied research, design thinking, and the SIT method to explore opportunities and build user-centered solutions alongside multidisciplinary teams.",
+      es: "Apliqué metodologías de research, design thinking y el método SIT para explorar oportunidades y desarrollar soluciones centradas en el usuario, junto a equipos multidisciplinares.",
+    },
   },
 ];
 

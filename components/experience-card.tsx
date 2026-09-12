@@ -1,7 +1,6 @@
 import { ExternalArrow } from "./external-arrow";
 import { TagList } from "./tag-list";
 import { formatDateRange } from "@/lib/dates";
-import { t } from "@/lib/i18n";
 import type { ExperienceEntry } from "@/lib/profile";
 import type { Locale } from "@/lib/routes";
 
@@ -29,9 +28,7 @@ export function ExperienceCard({ locale, entry }: ExperienceCardProps) {
           {entry.role} · {entry.company}
           {entry.url && <ExternalArrow />}
         </h3>
-        <p className="mt-2 text-sm text-fg-muted">
-          {t(locale, "todo.experienceDescription")}
-        </p>
+        <p className="mt-2 text-sm text-fg-muted">{entry.description[locale]}</p>
         <div className="mt-3">
           <TagList tags={entry.tags} />
         </div>
