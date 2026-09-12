@@ -1,0 +1,32 @@
+---
+title: "Caso de ejemplo: prueba del pipeline"
+summary: "No es un caso real. Existe solo para verificar el frontmatter, el tiempo de lectura, el resaltado de código y las imágenes. Se borra cuando se publique el primer caso real."
+date: 2026-01-01
+tags: [example, mdx]
+draft: true
+---
+
+Este archivo es una prueba, no contenido. Renderiza un párrafo, un bloque de
+código y una imagen para verificar el pipeline de MDX de punta a punta. Como
+`draft` es `true`, no aparece en el índice, ni en la landing, ni en el sitemap.
+
+## Un bloque de código
+
+Un fragmento recortado y anonimizado, del tipo que puede incluir un caso real:
+
+```yaml
+services:
+  api:
+    image: example/api:latest
+    deploy:
+      replicas: 2
+    networks:
+      - internal
+networks:
+  internal:
+    driver: overlay
+```
+
+## Una imagen
+
+![Diagrama de ejemplo](/case-studies/example/diagram.svg)
