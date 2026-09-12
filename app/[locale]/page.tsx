@@ -49,8 +49,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         <main id="content" className="lg:w-3/5 lg:pt-10 lg:pb-24">
           <Section id="about" title={sectionTitle("about")}>
             <div className="space-y-4 text-fg-muted">
-              <p>{t(locale, "todo.aboutFirst")}</p>
-              <p>{t(locale, "todo.aboutSecond")}</p>
+              <p>{t(locale, "about.first")}</p>
+              <p>{t(locale, "about.second")}</p>
             </div>
           </Section>
 
