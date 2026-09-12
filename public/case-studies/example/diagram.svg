@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Placeholder diagram">
+  <rect x="0.5" y="0.5" width="1199" height="674" fill="none" stroke="currentColor" stroke-opacity="0.25" rx="12" />
+  <g fill="none" stroke="currentColor" stroke-opacity="0.35" stroke-width="2">
+    <rect x="150" y="250" width="220" height="120" rx="10" />
+    <rect x="490" y="250" width="220" height="120" rx="10" />
+    <rect x="830" y="250" width="220" height="120" rx="10" />
+    <path d="M370 310h120M710 310h120" />
+  </g>
+  <g fill="currentColor" fill-opacity="0.5" font-family="monospace" font-size="20" text-anchor="middle">
+    <text x="260" y="317">placeholder</text>
+    <text x="600" y="317">placeholder</text>
+    <text x="940" y="317">placeholder</text>
+  </g>
+</svg>

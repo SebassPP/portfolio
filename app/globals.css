@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* El tema lo controla la clase .dark en <html> (next-themes), no el media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tema claro. Únicos valores de color literales del proyecto. */
+:root {
+  --bg: #f7f7f7;
+  --bg-elevated: #ffffff;
+  --fg: #111111;
+  --fg-muted: #5c5c61;
+  --border: #e2e2e4;
+  --accent: #8a5a00;
+
+  color-scheme: light;
+}
+
+/* Tema oscuro. */
+.dark {
+  --bg: #0f0f10;
+  --bg-elevated: #17171a;
+  --fg: #e8e8e8;
+  --fg-muted: #9a9a9f;
+  --border: #26262a;
+  --accent: #d99a1e;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa la barra fija en móvil al saltar a un ancla. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Foco visible con el acento en todo lo interactivo. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Link: subrayado fino; al hover texto y subrayado pasan al acento. */
+@utility link {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--fg-muted);
+  transition:
+    color 150ms ease,
+    text-decoration-color 150ms ease;
+
+  &:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+}
+
+/* Cuerpo de los casos: typography plugin atado a los tokens del tema. */
+.prose-tokens {
+  --tw-prose-body: var(--fg);
+  --tw-prose-headings: var(--fg);
+  --tw-prose-lead: var(--fg-muted);
+  --tw-prose-links: var(--fg);
+  --tw-prose-bold: var(--fg);
+  --tw-prose-counters: var(--fg-muted);
+  --tw-prose-bullets: var(--border);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--fg-muted);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-captions: var(--fg-muted);
+  --tw-prose-code: var(--fg);
+  --tw-prose-pre-code: var(--fg);
+  --tw-prose-pre-bg: var(--bg-elevated);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose-tokens a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--fg-muted);
+  transition:
+    color 150ms ease,
+    text-decoration-color 150ms ease;
+}
+
+.prose-tokens a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.prose-tokens :not(pre) > code {
+  background-color: var(--bg-elevated);
+  border-radius: 0.25rem;
+  padding: 0.15em 0.35em;
+  font-weight: 400;
+}
+
+/* Tailwind typography añade comillas alrededor del código inline. */
+.prose-tokens :not(pre) > code::before,
+.prose-tokens :not(pre) > code::after {
+  content: none;
+}
+
+.prose-tokens pre {
+  border: 1px solid var(--border);
+}
+
+/*
+ * rehype-pretty-code emite los dos temas como variables; aquí se elige uno
+ * según la clase .dark, sin JavaScript de resaltado en cliente.
+ */
+.prose-tokens code[data-theme*=" "],
+.prose-tokens code[data-theme*=" "] span {
+  color: var(--shiki-light);
+}
+
+.dark .prose-tokens code[data-theme*=" "],
+.dark .prose-tokens code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

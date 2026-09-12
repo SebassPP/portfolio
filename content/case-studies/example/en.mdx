@@ -1,0 +1,32 @@
+---
+title: "Example case study: pipeline check"
+summary: "Not a real case study. It exists only to verify frontmatter, reading time, code highlighting and images. Delete it once the first real case ships."
+date: 2026-01-01
+tags: [example, mdx]
+draft: true
+---
+
+This file is a fixture, not content. It renders one paragraph, one code block and
+one image so the MDX pipeline can be verified end to end. Because `draft` is
+`true`, it never shows up in the index, the landing page or the sitemap.
+
+## A code block
+
+A trimmed, anonymised snippet — the kind a real case study may include:
+
+```yaml
+services:
+  api:
+    image: example/api:latest
+    deploy:
+      replicas: 2
+    networks:
+      - internal
+networks:
+  internal:
+    driver: overlay
+```
+
+## An image
+
+![Placeholder diagram](/case-studies/example/diagram.svg)
