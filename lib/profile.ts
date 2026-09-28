@@ -66,7 +66,7 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     company: "Domo i",
     start: "2025-07",
     end: "2026-01",
-    url: null,
+    url: "https://www.grupobolivar.com.co/",
     tags: ["Design Thinking", "SIT", "User Research"],
     description: {
       en: "Domo i is the innovation hub of Grupo Bolívar–Davivienda, one of Colombia's largest financial and business groups. I applied research, design thinking, and the SIT method to explore opportunities and build user-centered solutions alongside multidisciplinary teams across the group.",
