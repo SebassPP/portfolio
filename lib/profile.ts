@@ -13,7 +13,15 @@ export const PROFILE = {
   phone: "+573105773241",
   phoneDisplay: "+57 310 577 3241",
   repoUrl: "https://github.com/SebassPP/portfolio",
+  /** En `public/`, servido tal cual. */
+  cvUrl: "/sebastian-pardo-cv.pdf",
 } as const;
+
+/**
+ * Secciones ocultas temporalmente: el código y los datos se quedan, solo no
+ * se renderizan. Reactivar es cambiar este valor a `true`.
+ */
+export const SHOW_PROJECTS = false;
 
 export type ExperienceEntry = {
   id: string;

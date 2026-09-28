@@ -10,7 +10,13 @@ import { SiteHeader } from "@/components/site-header";
 import { t } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/metadata";
 import { resolveLocale } from "@/lib/params";
-import { EXPERIENCE, PROFILE, PROJECTS, UPCOMING_CASE_STUDIES } from "@/lib/profile";
+import {
+  EXPERIENCE,
+  PROFILE,
+  PROJECTS,
+  SHOW_PROJECTS,
+  UPCOMING_CASE_STUDIES,
+} from "@/lib/profile";
 import { getSections } from "@/lib/sections";
 
 export async function generateMetadata({
@@ -62,13 +68,15 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             </div>
           </Section>
 
-          <Section id="projects" title={sectionTitle("projects")}>
-            <div className="space-y-6">
-              {PROJECTS.map((project) => (
-                <ProjectCard key={project.id} locale={locale} project={project} />
-              ))}
-            </div>
-          </Section>
+          {SHOW_PROJECTS && (
+            <Section id="projects" title={sectionTitle("projects")}>
+              <div className="space-y-6">
+                {PROJECTS.map((project) => (
+                  <ProjectCard key={project.id} locale={locale} project={project} />
+                ))}
+              </div>
+            </Section>
+          )}
 
           <Section id="case-studies" title={sectionTitle("case-studies")}>
             <ul className="space-y-6">

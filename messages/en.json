@@ -24,6 +24,7 @@
   "experience.present": "Now",
   "comingSoon": "Coming soon",
   "profile.tagline": "Backend engineer focused on architecture and operating real production systems — trade-offs, not just frameworks.",
+  "profile.downloadCv": "Download CV",
   "about.first": "I'm a backend and DevOps engineer based in Bogotá, Colombia, looking for a role at a company abroad — remote or with relocation. I lead backend development and infrastructure at BO-TECH, and I work independently as a freelance backend & DevOps engineer for external clients through Páramo Programing.",
   "about.second": "I'm not just someone who writes endpoints: I've led backend development end-to-end, made architecture and infrastructure decisions in production, and turned client requirements into complete builds. Before backend, I did data analysis for my university, and I still carry a secondary background in innovation and design thinking — useful for gathering requirements clearly, though my focus stays on backend and DevOps.",
   "todo.projectTitle": "[TODO: project name]",

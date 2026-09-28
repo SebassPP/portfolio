@@ -37,6 +37,13 @@ export function Sidebar({ locale }: { locale: Locale }) {
         </h1>
         <p className="mt-2 text-lg text-fg">{t(locale, "site.role")}</p>
         <p className="mt-4 max-w-sm text-fg-muted">{t(locale, "profile.tagline")}</p>
+        <a
+          href={PROFILE.cvUrl}
+          download="Sebastian_Pardo_CV.pdf"
+          className="link mt-4 inline-block text-sm font-medium"
+        >
+          {t(locale, "profile.downloadCv")}
+        </a>
 
         <div className="mt-8 hidden lg:block">
           <SectionNav label={t(locale, "nav.sections")} sections={sections} />
