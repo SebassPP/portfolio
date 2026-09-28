@@ -41,7 +41,6 @@ function Icon({ name }: { name: keyof typeof ICONS }) {
   );
 }
 
-/** GitHub / LinkedIn / correo. SVG inline, sin librería de íconos. */
 export function SocialLinks({ locale }: { locale: Locale }) {
   const links = [
     PROFILE.githubUrl && {

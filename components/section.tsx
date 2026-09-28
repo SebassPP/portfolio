@@ -6,7 +6,6 @@ type SectionProps = {
   children: ReactNode;
 };
 
-/** Sección de la landing. El `id` es el ancla de la navegación. */
 export function Section({ id, title, children }: SectionProps) {
   return (
     <section

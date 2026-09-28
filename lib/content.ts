@@ -11,7 +11,6 @@ const CONTENT_DIR = path.join(process.cwd(), "content", "case-studies");
 export type CaseStudyFrontmatter = {
   title: string;
   summary: string;
-  /** Fecha ISO (`YYYY-MM-DD`). */
   date: string;
   tags: string[];
   draft: boolean;
@@ -21,7 +20,6 @@ export type CaseStudy = {
   slug: string;
   locale: Locale;
   frontmatter: CaseStudyFrontmatter;
-  /** Cuerpo MDX sin frontmatter. */
   body: string;
   readingMinutes: number;
 };
@@ -42,7 +40,6 @@ function parseFrontmatter(file: string, data: unknown): CaseStudyFrontmatter {
     }
   }
 
-  // gray-matter convierte una fecha YAML sin comillas en Date.
   const date =
     raw.date instanceof Date
       ? raw.date.toISOString().slice(0, 10)
@@ -106,11 +103,6 @@ function listSlugs(): string[] {
     .map((entry) => entry.name);
 }
 
-/**
- * Lee todos los casos del idioma pedido, ordenados por fecha descendente.
- * Valida las dos versiones de cada caso, así que un error en el español rompe
- * el build aunque se esté construyendo el índice en inglés.
- */
 export function getCaseStudies(
   locale: Locale,
   { includeDrafts = false } = {},
@@ -139,7 +131,6 @@ export function getCaseStudy(slug: string, locale: Locale): CaseStudy | null {
   return readFile(slug, locale);
 }
 
-/** Casos publicados anterior y siguiente, en el orden del índice. */
 export function getAdjacentCaseStudies(slug: string, locale: Locale) {
   const published = getCaseStudies(locale);
   const index = published.findIndex((study) => study.slug === slug);

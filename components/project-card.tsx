@@ -13,10 +13,6 @@ type ProjectCardProps = {
 
 const LAYOUT = "group -mx-3 block rounded-lg px-3 py-4";
 
-/**
- * Captura estática + título. Mientras no haya captura ni URL confirmadas, se
- * muestra el marco 16:10 vacío y el título como TODO, sin link muerto.
- */
 export function ProjectCard({ locale, project }: ProjectCardProps) {
   const content = (
     <>

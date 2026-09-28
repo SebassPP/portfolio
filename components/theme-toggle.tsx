@@ -4,16 +4,10 @@ import { useTheme } from "next-themes";
 import { flushSync } from "react-dom";
 
 type ThemeToggleProps = {
-  /** "Switch to dark theme" — se anuncia cuando el tema actual es claro. */
   toDarkLabel: string;
-  /** "Switch to light theme" — se anuncia cuando el tema actual es oscuro. */
   toLightLabel: string;
 };
 
-/**
- * El icono y la etiqueta se eligen con la clase .dark en CSS, no con estado de
- * React: así no hay parpadeo ni desajuste de hidratación en el primer render.
- */
 export function ThemeToggle({ toDarkLabel, toLightLabel }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -30,8 +24,6 @@ export function ThemeToggle({ toDarkLabel, toLightLabel }: ThemeToggleProps) {
       return;
     }
 
-    // event.detail === 0 marca una activación por teclado (Enter/Espacio):
-    // ahí no hay coordenadas de clic útiles, así que el círculo nace del botón.
     const { x, y } =
       event.detail === 0
         ? (() => {

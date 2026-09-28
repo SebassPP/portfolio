@@ -1,10 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* El tema lo controla la clase .dark en <html> (next-themes), no el media query. */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Tema claro. Únicos valores de color literales del proyecto. */
 :root {
   --bg: #f7f7f7;
   --bg-elevated: #ffffff;
@@ -16,7 +14,6 @@
   color-scheme: light;
 }
 
-/* Tema oscuro. */
 .dark {
   --bg: #0f0f10;
   --bg-elevated: #17171a;
@@ -42,7 +39,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Compensa la barra fija en móvil al saltar a un ancla. */
   scroll-padding-top: 5rem;
 }
 
@@ -63,14 +59,12 @@ body {
   }
 }
 
-/* Foco visible con el acento en todo lo interactivo. */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 2px;
 }
 
-/* Link: subrayado fino; al hover texto y subrayado pasan al acento. */
 @utility link {
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
@@ -86,7 +80,6 @@ body {
   }
 }
 
-/* Cuerpo de los casos: typography plugin atado a los tokens del tema. */
 .prose-tokens {
   --tw-prose-body: var(--fg);
   --tw-prose-headings: var(--fg);
@@ -127,7 +120,6 @@ body {
   font-weight: 400;
 }
 
-/* Tailwind typography añade comillas alrededor del código inline. */
 .prose-tokens :not(pre) > code::before,
 .prose-tokens :not(pre) > code::after {
   content: none;
@@ -137,10 +129,6 @@ body {
   border: 1px solid var(--border);
 }
 
-/*
- * rehype-pretty-code emite los dos temas como variables; aquí se elige uno
- * según la clase .dark, sin JavaScript de resaltado en cliente.
- */
 .prose-tokens code[data-theme*=" "],
 .prose-tokens code[data-theme*=" "] span {
   color: var(--shiki-light);
@@ -151,14 +139,6 @@ body {
   color: var(--shiki-dark);
 }
 
-/*
- * Cambio de tema: un círculo que se expande desde el punto donde se hizo clic
- * (ver components/theme-toggle.tsx, que fija --theme-toggle-x/y/r y activa
- * esto con la View Transitions API nativa). Excepción consciente a la regla
- * de transiciones sutiles de 150–200 ms: aquí el tamaño del gesto pide más
- * tiempo para leerse. Sin librerías; se ignora sola en navegadores sin
- * soporte y el toggle no la activa bajo prefers-reduced-motion.
- */
 @media (prefers-reduced-motion: no-preference) {
   ::view-transition-old(root),
   ::view-transition-new(root) {

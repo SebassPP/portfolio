@@ -64,7 +64,6 @@ components/            un componente por archivo
 lib/                   contenido, i18n, rutas, metadata, fuentes, perfil
 messages/              textos de interfaz en.json / es.json
 content/case-studies/  los casos, un archivo por idioma
-docs/                  documentos de planeación y de identidad visual
 ```
 
 Los datos del perfil (experiencia, enlaces, casos en escritura) viven en

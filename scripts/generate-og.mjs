@@ -1,8 +1,3 @@
-/**
- * Genera public/og.png (1200×630) con los tokens del tema oscuro.
- * Se ejecuta a mano cuando cambien el nombre o el rol: `node scripts/generate-og.mjs`.
- * El PNG resultante se commitea; en v1 no hay generación dinámica de OG.
- */
 import { writeFileSync } from "node:fs";
 
 import sharp from "sharp";

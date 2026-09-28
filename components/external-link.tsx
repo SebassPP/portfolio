@@ -7,7 +7,6 @@ type ExternalLinkProps = {
   children: ReactNode;
 };
 
-/** Link externo dentro del texto: subrayado fino y `↗`. */
 export function ExternalLink({ href, children }: ExternalLinkProps) {
   return (
     <a

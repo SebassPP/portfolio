@@ -50,8 +50,6 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <div className="mx-auto max-w-[1200px] px-5 pt-20 lg:flex lg:gap-x-12 lg:px-10 lg:pt-0">
         <Sidebar locale={locale} />
 
-        {/* pt-10 compensa el padding superior de la primera Section, para que
-            su título quede a la altura de la foto de la columna izquierda. */}
         <main id="content" className="lg:w-3/5 lg:pt-10 lg:pb-24">
           <Section id="about" title={sectionTitle("about")}>
             <div className="space-y-4 text-fg-muted">

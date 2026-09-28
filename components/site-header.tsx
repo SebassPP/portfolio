@@ -8,16 +8,10 @@ import { localizedPath, type Locale } from "@/lib/routes";
 
 type SiteHeaderProps = {
   locale: Locale;
-  /** Ruta actual sin prefijo de idioma. */
   path: string;
-  /**
-   * En la landing los controles viven en la columna izquierda desde `lg`, así
-   * que la barra desaparece. En las páginas de una columna se queda.
-   */
   showOnDesktop?: boolean;
 };
 
-/** Barra fija con el nombre y los dos toggles. */
 export function SiteHeader({
   locale,
   path,

@@ -10,13 +10,8 @@ type ExperienceCardProps = {
 };
 
 const LAYOUT =
-  // 9rem: cabe un rango completo ("Jul 2025 — Jan 2026") en una sola línea.
   "group -mx-3 grid gap-y-2 rounded-lg px-3 py-4 lg:grid-cols-[9rem_1fr] lg:gap-x-4";
 
-/**
- * Toda la card es link cuando hay URL de la empresa. Mientras no la haya es
- * texto plano, sin hover: un `href="#"` es un link que no lleva a ninguna parte.
- */
 export function ExperienceCard({ locale, entry }: ExperienceCardProps) {
   const content = (
     <>

@@ -1,8 +1,3 @@
-/**
- * Pastillas de tecnología en mono. Sin color por tecnología.
- * Dentro de una card (`.group`) el fondo se invierte al hover, porque la card
- * toma `--bg-elevated` y la pastilla se perdería contra ella.
- */
 export function TagList({ tags }: { tags: readonly string[] }) {
   if (tags.length === 0) return null;
 

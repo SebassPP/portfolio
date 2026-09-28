@@ -4,7 +4,6 @@ import { getCaseStudies } from "@/lib/content";
 import { DEFAULT_LOCALE, LOCALES, localizedPath } from "@/lib/routes";
 import { absoluteUrl } from "@/lib/site";
 
-/** Ambos idiomas de cada ruta publicada. Los borradores quedan fuera. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "/",

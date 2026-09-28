@@ -9,19 +9,12 @@ import { PROFILE } from "@/lib/profile";
 import type { Locale } from "@/lib/routes";
 import { getSections } from "@/lib/sections";
 
-/**
- * Intro del perfil. En móvil se apila arriba del contenido; desde `lg` se
- * convierte en la columna izquierda fija. Se renderiza una sola vez, así que
- * solo hay un `h1` en la página.
- */
 export function Sidebar({ locale }: { locale: Locale }) {
   const sections = getSections(locale);
 
   return (
     <div className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-24">
       <div>
-        {/* TODO(sebastián): fondo de exteriores; docs/05-identidad-visual.md
-            pide fondo neutro. El encuadre de hombros hacia arriba ya está bien. */}
         <Image
           src="/images/sebastian.jpg"
           alt=""

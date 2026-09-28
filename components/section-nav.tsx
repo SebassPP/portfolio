@@ -7,9 +7,6 @@ type SectionNavProps = {
   sections: readonly { id: string; label: string }[];
 };
 
-/**
- * Resalta la sección visible. Único JavaScript de la landing.
- */
 export function SectionNav({ label, sections }: SectionNavProps) {
   const [activeId, setActiveId] = useState(sections[0]?.id);
 
@@ -25,9 +22,6 @@ export function SectionNav({ label, sections }: SectionNavProps) {
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
         if (visible.length > 0) setActiveId(visible[0].target.id);
       },
-      // Franja alta del viewport (10%–30%): la sección activa es la que el
-      // lector acaba de alcanzar. Centrarla haría que al inicio de la página
-      // ya apareciese resaltada la segunda sección.
       { rootMargin: "-10% 0px -70% 0px" },
     );
 

@@ -6,15 +6,12 @@ import { absoluteUrl } from "./site";
 
 type PageMetadataOptions = {
   locale: Locale;
-  /** Ruta sin prefijo de idioma, empezando por `/`. */
   path: string;
   title: string;
   description: string;
-  /** Borradores: URL directa accesible, pero fuera de los buscadores. */
   noindex?: boolean;
 };
 
-/** Open Graph pide language_TERRITORY, no el código corto. */
 const OG_LOCALES: Record<Locale, string> = {
   en: "en_US",
   es: "es_ES",
