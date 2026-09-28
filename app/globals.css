@@ -151,6 +151,35 @@ body {
   color: var(--shiki-dark);
 }
 
+/*
+ * Cambio de tema: un círculo que se expande desde el punto donde se hizo clic
+ * (ver components/theme-toggle.tsx, que fija --theme-toggle-x/y/r y activa
+ * esto con la View Transitions API nativa). Excepción consciente a la regla
+ * de transiciones sutiles de 150–200 ms: aquí el tamaño del gesto pide más
+ * tiempo para leerse. Sin librerías; se ignora sola en navegadores sin
+ * soporte y el toggle no la activa bajo prefers-reduced-motion.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-new(root) {
+    clip-path: circle(0px at var(--theme-toggle-x, 50%) var(--theme-toggle-y, 50%));
+    animation: theme-reveal 500ms ease-in forwards;
+  }
+
+  @keyframes theme-reveal {
+    to {
+      clip-path: circle(
+        var(--theme-toggle-r, 150%) at var(--theme-toggle-x, 50%) var(--theme-toggle-y, 50%)
+      );
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

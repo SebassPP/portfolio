@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { flushSync } from "react-dom";
 
 type ThemeToggleProps = {
   /** "Switch to dark theme" — se anuncia cuando el tema actual es claro. */
@@ -16,10 +17,48 @@ type ThemeToggleProps = {
 export function ThemeToggle({ toDarkLabel, toLightLabel }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
 
+  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    const next = resolvedTheme === "dark" ? "light" : "dark";
+
+    const supportsViewTransition = typeof document.startViewTransition === "function";
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!supportsViewTransition || prefersReducedMotion) {
+      setTheme(next);
+      return;
+    }
+
+    // event.detail === 0 marca una activación por teclado (Enter/Espacio):
+    // ahí no hay coordenadas de clic útiles, así que el círculo nace del botón.
+    const { x, y } =
+      event.detail === 0
+        ? (() => {
+            const rect = event.currentTarget.getBoundingClientRect();
+            return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+          })()
+        : { x: event.clientX, y: event.clientY };
+
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    const root = document.documentElement;
+    root.style.setProperty("--theme-toggle-x", `${x}px`);
+    root.style.setProperty("--theme-toggle-y", `${y}px`);
+    root.style.setProperty("--theme-toggle-r", `${radius}px`);
+
+    document.startViewTransition(() => {
+      flushSync(() => setTheme(next));
+    });
+  }
+
   return (
     <button
       type="button"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={handleClick}
       className="-m-2.5 flex size-11 items-center justify-center rounded-sm text-fg-muted transition-colors hover:text-accent"
     >
       <span className="sr-only dark:hidden">{toDarkLabel}</span>
