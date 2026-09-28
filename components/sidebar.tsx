@@ -20,10 +20,8 @@ export function Sidebar({ locale }: { locale: Locale }) {
   return (
     <div className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-24">
       <div>
-        {/* TODO(sebastián): esta es una foto de grado, cuerpo completo y fondo
-            de exteriores; docs/05-identidad-visual.md pide encuadre de hombros
-            hacia arriba con fondo neutro. Sirve de placeholder mientras llega
-            la foto definitiva. */}
+        {/* TODO(sebastián): fondo de exteriores; docs/05-identidad-visual.md
+            pide fondo neutro. El encuadre de hombros hacia arriba ya está bien. */}
         <Image
           src="/images/sebastian.jpg"
           alt=""
