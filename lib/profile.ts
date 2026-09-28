@@ -43,21 +43,21 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     url: "https://www.botech.com.co/",
     tags: ["Java 17", "Spring Boot 3", "Docker Swarm", "AWS", "PostgreSQL"],
     description: {
-      en: "I lead backend development and infrastructure: multi-tenant architecture, Docker Swarm on AWS, and CI/CD with GitHub Actions, plus coordinating a small, multidisciplinary team.",
-      es: "Lidero el desarrollo backend y la infraestructura: arquitectura multi-tenant, Docker Swarm en AWS y CI/CD con GitHub Actions, además de coordinar un equipo pequeño y multidisciplinar.",
+      en: "I lead backend development and infrastructure for a multi-tenant school transportation platform — GPS tracking, access control, and school management for ~2,000 active users across 5 schools, with Docker Swarm and CI/CD on AWS.",
+      es: "Lidero el desarrollo backend y la infraestructura de una plataforma multi-tenant de transporte escolar — tracking GPS, control de acceso y gestión escolar para ~2.000 usuarios activos en 5 colegios, con Docker Swarm y CI/CD en AWS.",
     },
   },
   {
     id: "paramo-programing",
-    role: "Co-owner & Software Engineer",
+    role: "Backend & DevOps Engineer (Freelance)",
     company: "Páramo Programing",
     start: "2026-01",
     end: null,
     url: "https://paramoprograming.com/",
     tags: ["Next.js", "Docker Swarm", "Nginx", "CI/CD"],
     description: {
-      en: "Co-owner of a small team of friends building custom software for clients across different sectors: e-commerce, academic CMS platforms, personal projects, among others.",
-      es: "Co-owner de un equipo de amigos construyendo software a la medida para clientes de distintos sectores: e-commerce, CMS académicos, proyectos personales, entre otros.",
+      en: "Freelance backend & DevOps engineer for external clients — end-to-end delivery from architecture to deployment and operation, including full DevOps setups taken from an empty server to production.",
+      es: "Ingeniero backend y DevOps freelance para clientes externos — entrega de punta a punta, desde la arquitectura hasta el despliegue y la operación, incluyendo montajes de DevOps completos desde un servidor vacío hasta producción.",
     },
   },
   {
@@ -69,8 +69,8 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     url: null,
     tags: ["Design Thinking", "SIT", "User Research"],
     description: {
-      en: "I applied research, design thinking, and the SIT method to explore opportunities and build user-centered solutions alongside multidisciplinary teams.",
-      es: "Apliqué metodologías de research, design thinking y el método SIT para explorar oportunidades y desarrollar soluciones centradas en el usuario, junto a equipos multidisciplinares.",
+      en: "Domo i is the innovation hub of Grupo Bolívar–Davivienda, one of Colombia's largest financial and business groups. I applied research, design thinking, and the SIT method to explore opportunities and build user-centered solutions alongside multidisciplinary teams across the group.",
+      es: "Domo i es el centro de innovación de Grupo Bolívar–Davivienda, uno de los grupos financieros y empresariales más grandes de Colombia. Apliqué metodologías de research, design thinking y el método SIT para explorar oportunidades y desarrollar soluciones centradas en el usuario, junto a equipos multidisciplinares de todo el grupo.",
     },
   },
 ];
